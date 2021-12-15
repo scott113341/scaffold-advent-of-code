@@ -14,7 +14,7 @@ fn part_1(lines: Vec<String>) -> usize {
     1
 }
 
-fn part_2(things: Vec<Thing>) -> usize {
+fn part_2(lines: Vec<String>) -> usize {
     2
 }
 
