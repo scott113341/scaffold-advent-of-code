@@ -8,7 +8,7 @@ where
 {
     include_str!("input.txt")
         .trim()
-        .split("\n")
+        .split('\n')
         .map(|s| s.parse().unwrap())
         .collect()
 }
@@ -21,7 +21,7 @@ where
 {
     include_str!("test_input.txt")
         .trim()
-        .split("\n")
+        .split('\n')
         .map(|s| s.parse().unwrap())
         .collect()
 }
