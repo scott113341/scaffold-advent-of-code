@@ -1,25 +1,23 @@
 use std::fmt::Debug;
 use std::str::FromStr;
 
-pub fn get_input<ParseAs>() -> Vec<ParseAs>
-where
-    ParseAs: FromStr,
-    <ParseAs as FromStr>::Err: Debug,
-{
-    include_str!("input.txt")
-        .trim()
-        .split('\n')
-        .map(|s| s.parse().unwrap())
-        .collect()
+#[allow(dead_code)]
+pub enum Input {
+    Real,
+    Test1,
 }
 
-#[allow(dead_code)]
-pub fn get_test_input<ParseAs>() -> Vec<ParseAs>
+pub fn get_input<ParseAs>(input: Input) -> Vec<ParseAs>
 where
     ParseAs: FromStr,
     <ParseAs as FromStr>::Err: Debug,
 {
-    include_str!("test_input.txt")
+    let input = match input {
+        Input::Real => include_str!("real.txt"),
+        Input::Test1 => include_str!("test_1.txt"),
+    };
+
+    input
         .trim()
         .split('\n')
         .map(|s| s.parse().unwrap())

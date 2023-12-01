@@ -14,10 +14,10 @@ impl FromStr for Thing {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::get_test_input;
+    use crate::{get_input, Input};
 
     #[test]
     fn test_thing_from_str() {
-        assert_eq!(get_test_input::<Thing>()[0], Thing {});
+        assert_eq!(get_input::<Thing>(Input::Test1)[0], Thing {});
     }
 }
